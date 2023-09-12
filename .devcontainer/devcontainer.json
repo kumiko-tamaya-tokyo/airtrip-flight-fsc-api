@@ -1,0 +1,30 @@
+{
+	"name": "PHP Docker",
+	"shutdownAction": "stopCompose",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "php-apache",
+
+	"workspaceFolder": "/srv",
+
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#570f24",
+			"titleBar.activeForeground": "#FFFFFF",
+			"activityBar.background": "#570f24",
+			"activityBar.foreground": "#FFFFFF"
+		},
+	},
+
+	"extensions": [
+		"felixfbecker.php-pack",
+		"bmewburn.vscode-intelephense-client",
+		"xdebug.php-debug",
+		"eamodio.gitlens"
+	],
+
+	"postCreateCommand": "cd src; composer install",
+	// "remoteUser": "vscode"
+}
