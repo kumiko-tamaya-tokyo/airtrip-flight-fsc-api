@@ -2,19 +2,19 @@ version: "3.8"
 
 services:
 
-  php-apache:
+  app:
     depends_on:
       - mysql-db
       - redis-session
-    container_name: xxxxx-php-apache
+    container_name: xxxxx-app
     build:
       context: .
-      dockerfile: .docker/php-apache/Dockerfile
+      dockerfile: .docker/app/Dockerfile
       target: php_dev
     volumes:
-      - ./.docker/php-apache/conf/php/php.ini:/usr/local/etc/php/php.ini
-      - ./.docker/php-apache/conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
-      - ./.docker/php-apache/conf/apache/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./.docker/app/conf/php/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/app/conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./.docker/app/conf/apache/conf/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./src:/srv/src
       - .:/srv
       - ~/.ssh/known_hosts:/root/.ssh/known_hosts

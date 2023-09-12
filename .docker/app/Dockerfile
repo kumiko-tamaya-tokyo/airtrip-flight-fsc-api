@@ -43,6 +43,6 @@ COPY --chown=${APP_USER}:${APP_USER} ./src ${APP_ROOT}
 # copy libralies
 COPY --chown=${APP_USER}:${APP_USER} ./lib ${LIB_ROOT}
 # copy configs
-COPY  ./.docker/php-apache/conf/php/php.ini /usr/local/etc/php/php.ini
-COPY  ./.docker/php-apache/conf/apache/conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY  ./.docker/app/conf/php/php.ini /usr/local/etc/php/php.ini
+COPY  ./.docker/app/conf/apache/conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 RUN composer install

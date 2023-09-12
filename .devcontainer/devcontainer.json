@@ -4,7 +4,7 @@
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "php-apache",
+	"service": "app",
 
 	"workspaceFolder": "/srv",
 
@@ -25,6 +25,8 @@
 		"eamodio.gitlens"
 	],
 
+	// localのみ
+	// "cd ../; composer create-project laravel/laravel src"
 	"postCreateCommand": "cd src; composer install",
 	// "remoteUser": "vscode"
 }
