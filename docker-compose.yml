@@ -42,6 +42,18 @@ services:
     ports:
       - 8000:80
 
+  web:
+    container_name: xxxxx-web
+    build:
+      context: .
+      dockerfile: .docker/web/Dockerfile
+    ports:
+      - 8081:80
+    depends_on:
+      - app
+    volumes:
+      - ./src:/srv/src
+
   mysql-db:
     container_name: xxxxx-mysql-db
     build:
